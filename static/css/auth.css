@@ -1,0 +1,267 @@
+/* =====================================================
+   Foodie Restaurant
+   Authentication Styles
+===================================================== */
+
+/* Background */
+
+.login-wrapper,
+.register-wrapper{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+    background:
+        radial-gradient(circle at top left,
+        rgba(255,107,53,.18),
+        transparent 45%),
+
+        radial-gradient(circle at bottom right,
+        rgba(255,183,3,.18),
+        transparent 45%);
+
+}
+
+/* Glass Card */
+
+.login-card,
+.register-card{
+
+    width:100%;
+
+    max-width:460px;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(22px);
+
+    border:1px solid var(--glass-border);
+
+    border-radius:22px;
+
+    padding:40px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s ease;
+
+}
+
+.login-card:hover,
+.register-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* Heading */
+
+.login-title,
+.register-title{
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:#fff;
+
+    margin-bottom:10px;
+
+}
+
+.auth-subtitle{
+
+    text-align:center;
+
+    color:var(--gray);
+
+    margin-bottom:30px;
+
+}
+
+/* Labels */
+
+.form-label{
+
+    color:#fff;
+
+    font-weight:500;
+
+}
+
+/* Inputs */
+
+.form-control{
+
+    height:52px;
+
+    border-radius:12px;
+
+    margin-bottom:18px;
+
+}
+
+/* Password Toggle */
+
+.password-wrapper{
+
+    position:relative;
+
+}
+
+.password-toggle{
+
+    position:absolute;
+
+    right:15px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    cursor:pointer;
+
+    color:var(--gray);
+
+    font-size:18px;
+
+}
+
+/* Button */
+
+.auth-btn{
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--accent)
+    );
+
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.auth-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(255,107,53,.35);
+
+}
+
+/* Bottom Link */
+
+.auth-footer{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    color:var(--gray);
+
+}
+
+.auth-footer a{
+
+    color:var(--secondary);
+
+    font-weight:600;
+
+}
+
+.auth-footer a:hover{
+
+    color:var(--primary);
+
+}
+
+/* Divider */
+
+.auth-divider{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin:25px 0;
+
+}
+
+.auth-divider::before,
+.auth-divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:rgba(255,255,255,.15);
+
+}
+
+.auth-divider span{
+
+    color:var(--gray);
+
+    font-size:.9rem;
+
+}
+
+/* Animation */
+
+.login-card,
+.register-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .login-card,
+    .register-card{
+
+        padding:30px 22px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .login-title,
+    .register-title{
+
+        font-size:1.6rem;
+
+    }
+
+}

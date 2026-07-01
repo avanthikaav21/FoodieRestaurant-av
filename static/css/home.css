@@ -1,0 +1,212 @@
+/* =====================================================
+   FOODIE RESTAURANT - HOME PAGE
+===================================================== */
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section{
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:80px 0;
+
+    background:
+        radial-gradient(circle at top left,
+        rgba(255,107,53,.15),
+        transparent 50%),
+
+        radial-gradient(circle at bottom right,
+        rgba(255,183,3,.12),
+        transparent 50%);
+
+}
+
+.hero-title{
+
+    font-size:3.5rem;
+
+    font-weight:800;
+
+    color:#fff;
+
+    line-height:1.2;
+
+}
+
+.hero-subtitle{
+
+    margin-top:20px;
+
+    color:var(--gray);
+
+    font-size:1.1rem;
+
+    max-width:500px;
+
+}
+
+.hero-buttons{
+
+    margin-top:30px;
+
+}
+
+/* Hero Image */
+
+.hero-img{
+
+    max-width:90%;
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+/* Floating Animation */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* =========================
+   FEATURES SECTION
+========================= */
+
+.features .card{
+
+    border-radius:20px;
+
+    text-align:center;
+
+    padding:30px 20px;
+
+    transition:.4s;
+
+}
+
+.features .card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.cta{
+
+    margin-top:80px;
+
+}
+
+.cta .glass{
+
+    padding:60px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.cta h2{
+
+    font-size:2.5rem;
+
+    color:#fff;
+
+}
+
+.cta p{
+
+    color:var(--gray);
+
+    margin-top:10px;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:991px){
+
+    .hero-title{
+
+        font-size:2.8rem;
+
+        text-align:center;
+
+    }
+
+    .hero-subtitle{
+
+        text-align:center;
+
+        margin:auto;
+
+    }
+
+    .hero-buttons{
+
+        text-align:center;
+
+    }
+
+    .hero-img{
+
+        margin-top:40px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero-title{
+
+        font-size:2.2rem;
+
+    }
+
+    .cta .glass{
+
+        padding:35px 20px;
+
+    }
+
+    .cta h2{
+
+        font-size:1.8rem;
+
+    }
+
+}

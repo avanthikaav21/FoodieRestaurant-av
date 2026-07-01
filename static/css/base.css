@@ -1,0 +1,933 @@
+/* ======================================================
+   FOODIE RESTAURANT
+   Base Styles - Part 1
+   ====================================================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===============================
+   Root Variables
+================================ */
+
+:root{
+
+    --primary:#ff6b35;
+    --secondary:#ffb703;
+    --accent:#ff3d68;
+
+    --dark:#0f172a;
+    --dark-light:#1e293b;
+
+    --white:#ffffff;
+    --text:#e2e8f0;
+    --gray:#94a3b8;
+
+    --success:#22c55e;
+    --danger:#ef4444;
+    --warning:#f59e0b;
+
+    --glass:rgba(255,255,255,.08);
+    --glass-border:rgba(255,255,255,.15);
+
+    --shadow:0 15px 35px rgba(0,0,0,.30);
+
+    --radius:18px;
+
+    --transition:.35s ease;
+
+}
+
+/* ===============================
+   Reset
+================================ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #111827
+    );
+
+    color:var(--text);
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+/* ===============================
+   Scrollbar
+================================ */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ff7b49;
+
+}
+
+/* ===============================
+   Links
+================================ */
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
+}
+
+a:hover{
+
+    color:var(--secondary);
+
+}
+
+/* ===============================
+   Images
+================================ */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/* ===============================
+   Loader
+================================ */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#0b1120;
+
+    z-index:99999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-circle{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    border:7px solid rgba(255,255,255,.15);
+
+    border-top:7px solid var(--primary);
+
+    margin:auto;
+
+    animation:loaderSpin 1s linear infinite;
+
+}
+
+.loader-title{
+
+    margin-top:25px;
+
+    font-size:2rem;
+
+    color:var(--white);
+
+    font-weight:700;
+
+}
+
+.loader-content p{
+
+    margin-top:10px;
+
+    color:var(--gray);
+
+}
+
+@keyframes loaderSpin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ===============================
+   Navbar
+================================ */
+
+.custom-navbar{
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(15,23,42,.75);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+
+}
+
+.navbar-brand{
+
+    font-size:1.7rem;
+
+    font-weight:700;
+
+    color:white !important;
+
+}
+
+.nav-link{
+
+    color:white !important;
+
+    margin-left:18px;
+
+    font-weight:500;
+
+    position:relative;
+
+}
+
+.nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:3px;
+
+    background:var(--secondary);
+
+    transition:.35s;
+
+}
+
+.nav-link:hover::after{
+
+    width:100%;
+
+}
+
+.nav-link:hover{
+
+    color:var(--secondary) !important;
+
+}
+
+.navbar .btn{
+
+    border-radius:30px;
+
+    padding:10px 22px;
+
+    font-weight:600;
+
+}
+
+/* ===============================
+   Main Wrapper
+================================ */
+
+.main-wrapper{
+
+    padding-top:90px;
+
+    min-height:100vh;
+
+}
+
+/* ===============================
+   Section Title
+================================ */
+
+.section-title{
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+    color:var(--white);
+
+}
+
+.section-subtitle{
+
+    color:var(--gray);
+
+    margin-top:10px;
+
+    font-size:1rem;
+
+}
+
+/* ======================================================
+   Global Buttons
+====================================================== */
+
+.btn{
+    border-radius:12px;
+    transition:all .35s ease;
+    font-weight:600;
+}
+
+.btn-primary{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--accent)
+    );
+
+    border:none;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(255,107,53,.35);
+
+}
+
+.btn-warning{
+
+    color:#fff;
+    border:none;
+
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+}
+
+.btn-warning:hover{
+
+    color:#fff;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(255,183,3,.35);
+
+}
+
+.btn-outline-light{
+
+    border:2px solid rgba(255,255,255,.25);
+
+}
+
+.btn-outline-light:hover{
+
+    background:white;
+    color:var(--dark);
+
+}
+
+/* ======================================================
+   Global Cards
+====================================================== */
+
+.card{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid var(--glass-border);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+    color:var(--text);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.card-title{
+
+    color:white;
+
+    font-weight:700;
+
+}
+
+.card-text{
+
+    color:var(--gray);
+
+}
+
+/* ======================================================
+   Alerts
+====================================================== */
+
+.alert{
+
+    border:none;
+
+    border-radius:14px;
+
+    font-weight:500;
+
+    box-shadow:var(--shadow);
+
+}
+
+.alert-success{
+
+    background:#16a34a;
+
+    color:white;
+
+}
+
+.alert-danger{
+
+    background:#dc2626;
+
+    color:white;
+
+}
+
+.alert-warning{
+
+    background:#f59e0b;
+
+    color:white;
+
+}
+
+.alert-info{
+
+    background:#0284c7;
+
+    color:white;
+
+}
+
+/* ======================================================
+   Glass Container
+====================================================== */
+
+.glass{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid var(--glass-border);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ======================================================
+   Section Spacing
+====================================================== */
+
+.section{
+
+    padding:90px 0;
+
+}
+
+.section-sm{
+
+    padding:60px 0;
+
+}
+
+/* ======================================================
+   Utility Classes
+====================================================== */
+
+.text-gradient {
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.shadow-lg-custom{
+
+    box-shadow:var(--shadow);
+
+}
+
+.rounded-xl{
+
+    border-radius:20px;
+
+}
+
+.cursor-pointer{
+
+    cursor:pointer;
+
+}
+
+/* ======================================================
+   Smooth Animation
+====================================================== */
+
+.fade-up{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ======================================================
+   Dropdown
+====================================================== */
+
+.dropdown-menu{
+
+    background:#1e293b;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:15px;
+
+}
+
+.dropdown-item{
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.dropdown-item:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* ======================================================
+   Selection
+====================================================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* ======================================================
+   Footer
+====================================================== */
+
+.footer{
+
+    margin-top:80px;
+
+    padding:60px 0 30px;
+
+    background:rgba(15,23,42,.95);
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-title{
+
+    color:#ffffff;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.footer-text{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+
+.footer h5{
+
+    color:#ffffff;
+
+    margin-bottom:20px;
+
+}
+
+.footer ul{
+
+    padding-left:0;
+
+}
+
+.footer ul li{
+
+    list-style:none;
+
+    margin-bottom:12px;
+
+}
+
+.footer ul li a{
+
+    color:var(--gray);
+
+    transition:.3s;
+
+}
+
+.footer ul li a:hover{
+
+    color:var(--secondary);
+
+    padding-left:8px;
+
+}
+
+.social-icons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:15px;
+
+}
+
+.social-icons a{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--glass);
+
+    border:1px solid var(--glass-border);
+
+    color:#fff;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.social-icons a:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-5px);
+
+}
+
+/* ======================================================
+   Scroll To Top Button
+====================================================== */
+
+#scrollTopBtn{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:none;
+
+    z-index:999;
+
+    border-radius:50%;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+#scrollTopBtn:hover{
+
+    transform:translateY(-5px) scale(1.05);
+
+}
+
+/* ======================================================
+   Form Controls
+====================================================== */
+
+.form-control,
+.form-select{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    color:#ffffff;
+
+    border-radius:12px;
+
+    padding:12px 15px;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    background:rgba(255,255,255,.10);
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 .2rem rgba(255,107,53,.25);
+
+    color:#ffffff;
+
+}
+
+.form-control::placeholder{
+
+    color:#b8c2cc;
+
+}
+
+/* ======================================================
+   Responsive
+====================================================== */
+
+@media (max-width:991px){
+
+    .navbar-nav{
+
+        padding-top:20px;
+
+    }
+
+    .nav-link{
+
+        margin-left:0;
+
+        padding:10px 0;
+
+    }
+
+    .section-title{
+
+        font-size:2rem;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .main-wrapper{
+
+        padding-top:80px;
+
+    }
+
+    .section{
+
+        padding:70px 0;
+
+    }
+
+    .footer{
+
+        text-align:center;
+
+    }
+
+    .social-icons{
+
+        justify-content:center;
+
+    }
+
+    #scrollTopBtn{
+
+        right:15px;
+
+        bottom:15px;
+
+        width:48px;
+
+        height:48px;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .section-title{
+
+        font-size:1.7rem;
+
+    }
+
+    .card{
+
+        border-radius:16px;
+
+    }
+
+    .glass{
+
+        padding:20px;
+
+    }
+
+    .loader-title{
+
+        font-size:1.5rem;
+
+    }
+
+}
+
+/* ======================================================
+   End of Base CSS
+====================================================== */

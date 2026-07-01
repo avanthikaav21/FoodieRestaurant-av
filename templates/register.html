@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+
+{% block title %}
+Register | Foodie Restaurant
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/auth.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="register-wrapper">
+
+    <div
+        class="register-card"
+        data-aos="zoom-in"
+    >
+
+        <h2 class="register-title text-gradient">
+
+            Create Account
+
+        </h2>
+
+        <p class="auth-subtitle">
+
+            Join Foodie Restaurant today
+
+        </p>
+
+        <form method="POST">
+
+            {{ form.hidden_tag() }}
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Full Name
+
+                </label>
+
+                {{ form.full_name(
+                    class="form-control",
+                    placeholder="Enter your full name"
+                ) }}
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Username
+
+                </label>
+
+                {{ form.username(
+                    class="form-control",
+                    placeholder="Choose a username"
+                ) }}
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Email Address
+
+                </label>
+
+                {{ form.email(
+                    class="form-control",
+                    placeholder="Enter your email"
+                ) }}
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Phone Number
+
+                </label>
+
+                {{ form.phone(
+                    class="form-control",
+                    placeholder="Enter your phone number"
+                ) }}
+
+            </div>
+
+            <div class="mb-3 password-wrapper">
+
+                <label class="form-label">
+
+                    Password
+
+                </label>
+
+                {{ form.password(
+                    class="form-control",
+                    id="password",
+                    placeholder="Create a password"
+                ) }}
+
+                <i
+                    class="bi bi-eye password-toggle"
+                    id="togglePassword"
+                ></i>
+
+            </div>
+
+            <div class="mb-4 password-wrapper">
+
+                <label class="form-label">
+
+                    Confirm Password
+
+                </label>
+
+                {{ form.confirm_password(
+                    class="form-control",
+                    id="confirmPassword",
+                    placeholder="Confirm your password"
+                ) }}
+
+                <i
+                    class="bi bi-eye password-toggle"
+                    id="toggleConfirmPassword"
+                ></i>
+
+            </div>
+
+            {{ form.submit(
+                class="auth-btn"
+            ) }}
+
+        </form>
+
+        <div class="auth-divider">
+
+            <span>OR</span>
+
+        </div>
+
+        <div class="auth-footer">
+
+            Already have an account?
+
+            <a href="{{ url_for('auth.login') }}">
+
+                Login
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script>
+
+function togglePassword(inputId, iconId){
+
+    const input=document.getElementById(inputId);
+
+    const icon=document.getElementById(iconId);
+
+    icon.addEventListener("click",function(){
+
+        if(input.type==="password"){
+
+            input.type="text";
+
+            icon.classList.remove("bi-eye");
+
+            icon.classList.add("bi-eye-slash");
+
+        }else{
+
+            input.type="password";
+
+            icon.classList.remove("bi-eye-slash");
+
+            icon.classList.add("bi-eye");
+
+        }
+
+    });
+
+}
+
+togglePassword("password","togglePassword");
+
+togglePassword("confirmPassword","toggleConfirmPassword");
+
+</script>
+
+{% endblock %}

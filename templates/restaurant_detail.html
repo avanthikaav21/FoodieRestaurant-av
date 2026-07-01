@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ restaurant.name }} | Menu
+{% endblock %}
+
+{% block content %}
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="glass p-4">
+
+            <h2>{{ restaurant.name }}</h2>
+
+            <p>{{ restaurant.description }}</p>
+
+            <p>⭐ {{ restaurant.rating }}</p>
+
+            <hr>
+
+            <h4>Menu Coming Next 🚀</h4>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

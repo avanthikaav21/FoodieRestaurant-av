@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}
+Restaurants | Foodie
+{% endblock %}
+
+{% block content %}
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title text-center">
+
+            🍽️ Restaurants
+
+        </h2>
+
+        <p class="section-subtitle text-center">
+
+            Choose your favorite restaurant
+
+        </p>
+
+        <div class="row mt-5">
+
+            {% for r in restaurants %}
+
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in">
+
+                <div class="card restaurant-card">
+
+                    <img src="{{ r.image_url }}"
+                         class="card-img-top">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+
+                            {{ r.name }}
+
+                        </h5>
+
+                        <p class="card-text">
+
+                            {{ r.description }}
+
+                        </p>
+
+                        <p>
+
+                            ⭐ {{ r.rating }}
+
+                        </p>
+
+                        <a href="{{ url_for('restaurant.restaurant_detail', id=r.id) }}"
+                           class="btn btn-warning w-100">
+
+                            View Menu
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add Restaurant
+{% endblock %}
+
+{% block content %}
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="glass p-4">
+
+            <h3>Add Restaurant</h3>
+
+            <form method="POST">
+
+                <input type="text"
+                       name="name"
+                       class="form-control"
+                       placeholder="Restaurant Name">
+
+                <textarea name="description"
+                          class="form-control mt-2"
+                          placeholder="Description"></textarea>
+
+                <input type="text"
+                       name="image_url"
+                       class="form-control mt-2"
+                       placeholder="Image URL">
+
+                <button class="btn btn-warning mt-3 w-100">
+
+                    Add Restaurant
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
